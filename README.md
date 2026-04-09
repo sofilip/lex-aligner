@@ -2,7 +2,7 @@
 
 This project provides a lightweight, universal Python command-line tool that processes official HTML publications from **EUR-Lex** (such as the EU AI Act, GDPR, etc.) and generates a clean, maind bilingual document. 
 
-It is designed to help easily cross-referencing the exact terminology and phrasing between any two EU languages, paragraph by paragraph.
+It is designed to facilitate the cross-checking of precise terminology and phrasing between any two EU languages, paragraph by paragraph.
 
 ## Features
 * **Universal Language Support:** Uses smart Regular Expressions (Regex) that automatically detect and filter out formatting noise (like list letters `(a), (β), (ö)` or numbers `(140)`) across all EU languages, preventing alignment drift.
