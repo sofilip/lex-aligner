@@ -29,7 +29,7 @@ lex-aligner/
 2. Create a virtual environment (Recommended):
    ```bash
    python -m venv lex-aligner-venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   source lex-aligner-venv/bin/activate  # On Windows use: lex-aligner-venv\Scripts\activate
    ```
 
 3. Install the required libraries:
