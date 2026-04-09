@@ -46,7 +46,7 @@ def main():
     # 2. Generate the HTML file
     with open(PATH_OUTPUT, 'w', encoding='utf-8') as out:
         out.write("<html><head><meta charset='utf-8'><style>\n")
-        out.write("body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.5; }\n")
+        out.write("body { font-family: Times New Roman, sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.5; text-align: justify; }\n");
         out.write(".lang1 { color: #000; font-weight: bold; margin-top: 20px; font-size: 16px; }\n")
         out.write(".lang2 { color: #555; font-style: italic; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; font-size: 15px; }\n")
         out.write("</style></head><body>\n")
