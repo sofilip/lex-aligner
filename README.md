@@ -50,4 +50,3 @@ python main.py
 
 ## Converting to PDF
 Once the script finishes, open your generated HTML file in any modern web browser (Chrome, Edge, Firefox). Press `Ctrl+P` (or `Cmd+P` on Mac) and select **"Save as PDF"** for a perfectly formatted, offline legal document.
-```
