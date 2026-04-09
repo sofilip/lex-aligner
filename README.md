@@ -22,8 +22,8 @@ lex-aligner/
 
 1. Clone the repository:
    ```bash
-   git clone
-   cd lex-aligner/ 
+   git clone https://github.com/sofilip/lex-aligner
+   cd lex-aligner/    # On Windows use: dir lex-aligner
    ```
 
 2. Create a virtual environment (Recommended):
