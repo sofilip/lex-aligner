@@ -1,14 +1,10 @@
 import os
 import re
+import argparse
 from bs4 import BeautifulSoup
 
-PATH_FILE_1 = "el.html"
-PATH_FILE_2 = "en.html"
-PATH_OUTPUT = "output.html"
-
 def is_unwanted_marker(text):
-    """Checks if a string is just a standalone marker (number/letter)"""
-
+    """checks if a string is just a standalone marker (number/letter)"""
     t = text.strip()
     # Matches (1), (a), β), 1., etc. using Unicode word characters (\w)
     if re.match(r'^\([\w]+\)$', t, re.IGNORECASE) or \
@@ -19,7 +15,7 @@ def is_unwanted_marker(text):
     return False
 
 def extract_paragraphs(file_path):
-    """Opens an HTML file and extracts strictly the <p> tags."""
+    """opens an HTML file and extracts strictly the <p> tags."""
     if not os.path.exists(file_path):
         print(f"Error: File not found at {file_path}")
         return []
@@ -36,17 +32,26 @@ def extract_paragraphs(file_path):
     return text_blocks
 
 def main():
-    # 1. Extract text from the hardcoded paths
-    text1 = extract_paragraphs(PATH_FILE_1)
-    text2 = extract_paragraphs(PATH_FILE_2)
+    # set up argument parsing
+    parser = argparse.ArgumentParser(description="Extract and combine <p> tags from two HTML files.")
+    parser.add_argument("file1", help="Path to the first input HTML file")
+    parser.add_argument("file2", help="Path to the second input HTML file")
+    parser.add_argument("-o", "--output", required=True, help="Path for the output HTML file")
+    
+    args = parser.parse_args()
+
+    # 1. Extract text from the paths provided in the terminal
+    text1 = extract_paragraphs(args.file1)
+    text2 = extract_paragraphs(args.file2)
     
     if not text1 or not text2:
+        print("Aborting: Could not extract text from one or both files.")
         return
 
     # 2. Generate the HTML file
-    with open(PATH_OUTPUT, 'w', encoding='utf-8') as out:
+    with open(args.output, 'w', encoding='utf-8') as out:
         out.write("<html><head><meta charset='utf-8'><style>\n")
-        out.write("body { font-family: Times New Roman, sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.5; text-align: justify; }\n");
+        out.write("body { font-family: Times New Roman, sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.5; text-align: justify; }\n")
         out.write(".lang1 { color: #000; font-weight: bold; margin-top: 20px; font-size: 16px; }\n")
         out.write(".lang2 { color: #555; font-style: italic; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; font-size: 15px; }\n")
         out.write("</style></head><body>\n")
