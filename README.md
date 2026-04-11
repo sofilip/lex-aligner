@@ -44,7 +44,7 @@ Go to [EUR-Lex](https://eur-lex.europa.eu/homepage.html) and download the HTML, 
 
 **Step 2: Run the script via the terminal**
 ```bash
-python3 main.py file1.html file2.html -o output.html
+python3 main.py el.html en.html -o output.html
 ```
 
 ## Converting to PDF
