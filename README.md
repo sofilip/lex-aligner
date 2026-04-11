@@ -40,13 +40,12 @@ lex-aligner/
 ## Usage
 
 **Step 1: Download your source files**
-Go to [EUR-Lex](https://eur-lex.europa.eu/) and download the HTML, webpage-only versions of your desired document in two languages. Save them to your project folder (e.g., `el.html` and `en.html`).
+Go to [EUR-Lex](https://eur-lex.europa.eu/homepage.html) and download the HTML, webpage-only versions of your desired document in two languages. Save them to your project folder (e.g., `el.html` and `en.html`).
 
 **Step 2: Run the script via the terminal**
 ```bash
-python main.py
+python3 main.py file1.html file2.html -o output.html
 ```
-*(By default, this saves the output as `output.html`)*
 
 ## Converting to PDF
 Once the script finishes, open your generated HTML file in any modern web browser (Chrome, Edge, Firefox). Press `Ctrl+P` (or `Cmd+P` on Mac) and select **"Save as PDF"** for a perfectly formatted, offline legal document.
